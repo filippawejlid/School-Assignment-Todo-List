@@ -17,6 +17,7 @@ main {
       background-color: white;
       display: flex;
       flex-direction: column;
+      align-items: center;
       h2 {
         text-align: center;
       }
@@ -35,20 +36,39 @@ main {
           width: 60%;
           padding: 10px;
         }
-        span {
-          position: absolute;
-          right: 15px;
-          top: 10px;
+        button {
+          width: 50px;
           cursor: pointer;
-          transition: 0.3s;
+          border: white 1px solid;
+
+          &:hover {
+            background-color: lightgrey;
+          }
         }
       }
+      ul {
+        width: 80%;
+        padding: 0;
+        li {
+          cursor: pointer;
+          list-style: none;
 
-      li {
-        list-style-type: none;
-        &:hover {
-          transform: scale(1.05);
-          transition: 0.3s;
+          &:checked {
+            background: #888;
+            color: #fff;
+            text-decoration: line-through;
+          }
+
+          &:hover {
+            background-color: #c7c9c975;
+            transition: 0.3s;
+          }
+          &:nth-child(odd) {
+            background-color: rgba(211, 211, 211, 0.219);
+            &:hover {
+              background-color: #c7c9c975;
+            }
+          }
         }
       }
     }
