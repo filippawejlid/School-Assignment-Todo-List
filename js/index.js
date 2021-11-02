@@ -17,9 +17,9 @@ function addTask(){
     let li = document.createElement("li");
     let newTask = document.getElementById("inputValue").value;
     let task = document.createTextNode(newTask);
+    task.document.id = ("list-item");
     li.appendChild(task);
 
-    document.
     document.getElementById("list-ul").innerHTML += task;
     localStorage.setItem("Tasks", task);
 
