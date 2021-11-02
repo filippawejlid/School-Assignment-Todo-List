@@ -1,6 +1,8 @@
 window.onload = function() {
     start();
     document.getElementById("buttonInput").addEventListener('click', addTask)
+    document.getElementById("checkbox").addEventListener('click', moveTask)
+
 }
 
 
@@ -30,12 +32,8 @@ function addTask(){
     }
 
 } 
-   // let ul = document.getElementById("list-ul");
-    // let li = document.createElement("li")
 
-    // let newTask = document.getElementById("inputValue").value;
-    // let task = document.createTextNode(newTask);
+function moveTask () {
     
 
-    // li.appendChild(document.createTextNode(checkbox + task));
-    // document.getElementById("list").appendChild(li);
+}
