@@ -13,18 +13,29 @@ document.getElementById("date").innerHTML = month + "/" + date + "/" + year;
 }
 
 function addTask(){
-
     let li = document.createElement("li");
+
+    let input = document.createElement("input");
+    input.type = "checkbox";
+    li.appendChild(input);
+
+
     let newTask = document.getElementById("inputValue").value;
     let task = document.createTextNode(newTask);
-    task.document.id = ("list-item");
     li.appendChild(task);
+    if (newTask === '') {
+      alert("Du måste skriva något!");
+    } else {
+      document.getElementById("list-ul").appendChild(li);
+    }
 
-    document.getElementById("list-ul").innerHTML += task;
-    localStorage.setItem("Tasks", task);
+} 
+   // let ul = document.getElementById("list-ul");
+    // let li = document.createElement("li")
 
+    // let newTask = document.getElementById("inputValue").value;
+    // let task = document.createTextNode(newTask);
     
-    // let ul = document.getElementById("list-ul");
-    
-}
 
+    // li.appendChild(document.createTextNode(checkbox + task));
+    // document.getElementById("list").appendChild(li);
