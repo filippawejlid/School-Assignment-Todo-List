@@ -64,6 +64,7 @@ main {
         li {
           cursor: pointer;
           list-style: none;
+          font-size: 1.1rem;
 
           &:checked {
             background: #888;

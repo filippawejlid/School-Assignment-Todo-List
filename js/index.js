@@ -1,7 +1,8 @@
 window.onload = function() {
     start();
     document.getElementById("buttonInput").addEventListener('click', addTask)
-    document.getElementById("checkbox").addEventListener('click', moveTask)
+    // document.getElementById("inputValue").addEventListener('click', clearInput)
+    document.getElementById("list-item").addEventListener('click', moveTask)
 
 }
 
@@ -14,25 +15,32 @@ let date = n.getDate();
 document.getElementById("date").innerHTML = month + "/" + date + "/" + year;
 }
 
+function clearInput(){
+  document.getElementById("inputValue").value = " ";
+}
+
+let taskList = [];
 function addTask(){
     let li = document.createElement("li");
-
-    let input = document.createElement("input");
-    input.type = "checkbox";
-    li.appendChild(input);
-
-
+    li.id = "list-item";
     let newTask = document.getElementById("inputValue").value;
     let task = document.createTextNode(newTask);
     li.appendChild(task);
-    if (newTask === '') {
+
+
+    if (newTask === '' || newTask=== ' ') {
       alert("Du måste skriva något!");
     } else {
       document.getElementById("list-ul").appendChild(li);
+      taskList.push(task);
+      console.log(taskList);
     }
-
 } 
 
 function moveTask () {
 
+  for (let i = 0; i < taskList.length; i++) {
+    taskList
+    
+  }
 }
