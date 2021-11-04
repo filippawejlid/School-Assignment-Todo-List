@@ -21,23 +21,38 @@ function clearInput(){
 
 let taskList = [];
 function addTask(){
-    let li = document.createElement("li");
-    li.id = "list-item";
+    // let li = document.createElement("li");
+    // li.id = "list-item";
 
     let newTask = document.getElementById("inputValue").value;
     let task = document.createTextNode(newTask);
   
-    li.appendChild(task);
+    // li.appendChild(task);
 
 
     if (newTask === '' || newTask=== ' ') {
       alert("Du måste skriva något!");
     } else {
-      document.getElementById("list-ul").appendChild(li);
+      // document.getElementById("list-ul").appendChild(li);
       taskList.push(task);
+
+      for (let i = 0; i < taskList.length; i++) {
+        let li = document.createElement("li");
+        li.id = "list-item";
+        document.getElementById("list-ul").appendChild(li);
+        
+        li.appendChild(taskList[i])
+        
+      }
+      console.log(taskList);
 
     }
 } 
+
+let finishedTasks = [];
+let finishedLi = document.createElement("li");
+finishedLi.id = "finished-list-item";
+document.getElementById("finishedtask").appendChild(finishedLi);
 
 function moveTask () {
 
@@ -45,7 +60,11 @@ function moveTask () {
 
     
     // taskList[i].addEventListener("click", ()=> {taskList.splice([i], 1)})
-    taskList[i].addEventListener("click", ()=> {taskList[i] = [0]})
+    taskList[i].addEventListener("click", ()=> {
+      taskList[i] = [0]; 
+      finishedTasks.push(taskList[i]); 
+      finishedTasks.appendChild(taskList[i])})
+
     console.log(taskList);
     
   }
