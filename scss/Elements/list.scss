@@ -66,6 +66,7 @@ main {
           cursor: pointer;
           list-style: none;
           font-size: 1.1rem;
+          word-wrap: break-word;
 
           &:checked {
             background: #888;

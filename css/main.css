@@ -64,7 +64,8 @@ main {
         main .list-box .list-container ul li {
           cursor: pointer;
           list-style: none;
-          font-size: 1.1rem; }
+          font-size: 1.1rem;
+          word-wrap: break-word; }
           main .list-box .list-container ul li:checked {
             background: #888;
             color: #fff;

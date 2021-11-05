@@ -1,13 +1,12 @@
+
 window.onload = function() {
-    start();
+    date();
     document.getElementById("buttonInput").addEventListener('click', addTask)
     document.getElementById("inputValue").addEventListener('click', clearInput)
-    document.getElementById("list-item").addEventListener('click', moveTask)
-
 }
 
 
-function start() {
+function date() {
 let n =  new Date();
 let year = n.getFullYear();
 let month = n.getMonth() + 1;
@@ -21,51 +20,40 @@ function clearInput(){
 
 let taskList = [];
 function addTask(){
-    // let li = document.createElement("li");
-    // li.id = "list-item";
 
-    let newTask = document.getElementById("inputValue").value;
-    let task = document.createTextNode(newTask);
-  
-    // li.appendChild(task);
+    let newTask = document.getElementById("inputValue").value.trim();
 
-
-    if (newTask === '' || newTask=== ' ') {
+    if (newTask === '') {
       alert("Du måste skriva något!");
     } else {
-      // document.getElementById("list-ul").appendChild(li);
-      taskList.push(task);
+      taskList.push(newTask);
+      document.getElementById("list-ul").innerHTML= null;
 
       for (let i = 0; i < taskList.length; i++) {
         let li = document.createElement("li");
-        li.id = "list-item";
-        document.getElementById("list-ul").appendChild(li);
+        li.id = "list-item" +i;
+
+        document.getElementById("list-ul").appendChild(li);  
+        li.addEventListener("click", ()=> {moveTask(i)})
         
-        li.appendChild(taskList[i])
+        li.innerHTML = taskList[i];
+        console.log(taskList[i]);
         
       }
-      console.log(taskList);
-
     }
 } 
 
+
 let finishedTasks = [];
-let finishedLi = document.createElement("li");
-finishedLi.id = "finished-list-item";
-document.getElementById("finishedtask").appendChild(finishedLi);
+function moveTask (clickedItem) {
 
-function moveTask () {
+    let removedItems = taskList.splice(clickedItem, 1);
 
-  for (let i = 0; i < taskList.length; i++) {
+    finishedTasks.push(removedItems[0])
 
-    
-    // taskList[i].addEventListener("click", ()=> {taskList.splice([i], 1)})
-    taskList[i].addEventListener("click", ()=> {
-      taskList[i] = [0]; 
-      finishedTasks.push(taskList[i]); 
-      finishedTasks.appendChild(taskList[i])})
 
-    console.log(taskList);
-    
-  }
-}
+
+}     // let finishedLi = document.createElement("li");
+    // finishedLi.id = "finished-item" +i;
+
+    // document.getElementById("finishedtask").appendChild(finishedLi); 
