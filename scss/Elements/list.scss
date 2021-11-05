@@ -59,6 +59,21 @@ main {
           }
         }
       }
+      #finishedtask {
+        li {
+          display: flex;
+          justify-content: space-between;
+        }
+        .close-button {
+          cursor: pointer;
+          text-align: center;
+          width: 10%;
+
+          &:hover {
+            background-color: lightgray;
+          }
+        }
+      }
       ul {
         width: 80%;
         padding: 0;

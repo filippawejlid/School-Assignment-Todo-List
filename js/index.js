@@ -37,9 +37,11 @@ function addTask(){
         li.addEventListener("click", ()=> {moveTask(i)})
         
         li.innerHTML = taskList[i];
-        console.log(taskList[i]);
+
         
       }
+      console.log(taskList)
+
     }
 } 
 
@@ -47,13 +49,49 @@ function addTask(){
 let finishedTasks = [];
 function moveTask (clickedItem) {
 
-    let removedItems = taskList.splice(clickedItem, 1);
+  for (let i = 0; i < taskList.length; i++) {
+    console.log("list-item" + [i]);
+    // document.getElementById("list-ul").removeChild("list-item" + [i])
 
-    finishedTasks.push(removedItems[0])
+  }
+
+  let removedItems = taskList.splice(clickedItem, 1);
 
 
+  finishedTasks.push(removedItems[0])
 
-}     // let finishedLi = document.createElement("li");
-    // finishedLi.id = "finished-item" +i;
+  addToDoneList();
 
-    // document.getElementById("finishedtask").appendChild(finishedLi); 
+
+}     
+
+function addToDoneList(){
+
+  document.getElementById("finishedtask").innerHTML= null;
+  for (let i = 0; i < finishedTasks.length; i++) {
+    let finishedLi = document.createElement("li");
+    finishedLi.id = "finished-item" +i;
+    document.getElementById("finishedtask").appendChild(finishedLi);  
+
+    finishedLi.innerHTML = finishedTasks[i];
+
+    let span = document.createElement("span");
+    span.innerHTML = "X";
+    span.classList.add("close-button");
+    // span.addEventListener("click", ()=> {deleteTask(i)})
+
+    finishedLi.appendChild(span)
+
+    console.log(taskList + " " + "Ska göra");
+    console.log(finishedTasks + " " + "Har gjort");
+
+  
+  }
+
+
+}
+
+// function deleteTask(itemToDelete){
+
+// }
+
