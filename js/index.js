@@ -3,6 +3,7 @@ window.onload = function() {
     date();
     document.getElementById("buttonInput").addEventListener('click', addTask)
     document.getElementById("inputValue").addEventListener('click', clearInput)
+    document.getElementById("sort-button").addEventListener('click', sortList)
 }
 
 
@@ -128,3 +129,10 @@ function deleteTask(itemToDelete){
 
 }
 
+function sortList() {
+  console.log(taskList);
+  taskList.sort();
+  console.log(taskList);
+  
+
+}
