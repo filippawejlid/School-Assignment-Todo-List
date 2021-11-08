@@ -49,14 +49,12 @@ function addTask(){
 let finishedTasks = [];
 function moveTask (clickedItem) {
 
-  for (let i = 0; i < taskList.length; i++) {
-    console.log("list-item" + [i]);
-    // document.getElementById("list-ul").removeChild("list-item" + [i])
+  let liItem = document.getElementById("list-item" + clickedItem);  
+  liItem.remove();
 
-  }
+  let removedItems = taskList.splice(clickedItem, 1);  
 
-  let removedItems = taskList.splice(clickedItem, 1);
-
+  
 
   finishedTasks.push(removedItems[0])
 
@@ -81,11 +79,6 @@ function addToDoneList(){
     // span.addEventListener("click", ()=> {deleteTask(i)})
 
     finishedLi.appendChild(span)
-
-    console.log(taskList + " " + "Ska göra");
-    console.log(finishedTasks + " " + "Har gjort");
-
-  
   }
 
 
