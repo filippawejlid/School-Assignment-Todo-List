@@ -40,8 +40,6 @@ function addTask(){
 
         
       }
-      console.log(taskList)
-
     }
 } 
 
@@ -52,9 +50,10 @@ function moveTask (clickedItem) {
   let liItem = document.getElementById("list-item" + clickedItem);  
   liItem.remove();
 
-  let removedItems = taskList.splice(clickedItem, 1);  
+  // let liItem = document.getElementById("list-item" + clickedItem); 
+  // liItem.innerHTML = ""; 
 
-  
+  let removedItems = taskList.splice(clickedItem, 1);  
 
   finishedTasks.push(removedItems[0])
 
@@ -67,16 +66,20 @@ function addToDoneList(){
 
   document.getElementById("finishedtask").innerHTML= null;
   for (let i = 0; i < finishedTasks.length; i++) {
+
     let finishedLi = document.createElement("li");
     finishedLi.id = "finished-item" +i;
-    document.getElementById("finishedtask").appendChild(finishedLi);  
+    document.getElementById("finishedtask").appendChild(finishedLi); 
+
+    finishedLi.addEventListener("click", ()=> {bringBackTask(i)})
 
     finishedLi.innerHTML = finishedTasks[i];
 
     let span = document.createElement("span");
     span.innerHTML = "X";
     span.classList.add("close-button");
-    // span.addEventListener("click", ()=> {deleteTask(i)})
+
+    span.addEventListener("click", ()=> {deleteTask(i)})
 
     finishedLi.appendChild(span)
   }
@@ -84,7 +87,44 @@ function addToDoneList(){
 
 }
 
-// function deleteTask(itemToDelete){
+function bringBackTask(bringBackItem) {
 
-// }
+  let removeFromRemoved = document.getElementById("finished-item" + bringBackItem);
+  removeFromRemoved.remove();
+
+  let bringBackList = finishedTasks.splice(bringBackItem, 1);  
+
+  taskList.push(bringBackList[0])
+
+  console.log(taskList);
+
+  addBackToTask();
+
+}
+
+function addBackToTask(){
+
+  document.getElementById("list-ul").innerHTML= null;
+
+  for (let i = 0; i < taskList.length; i++) {
+
+    let li = document.createElement("li");
+    li.id = "list-item" +i;
+
+    document.getElementById("list-ul").appendChild(li);  
+    li.addEventListener("click", ()=> {moveTask(i)})
+    
+    li.innerHTML = taskList[i];
+    console.log(taskList[i]);
+  }
+}
+
+function deleteTask(itemToDelete){
+
+  let deleteIt = document.getElementById("finished-item" + itemToDelete);
+  deleteIt.remove();
+
+  finishedTasks.splice(itemToDelete, 1);  
+
+}
 
