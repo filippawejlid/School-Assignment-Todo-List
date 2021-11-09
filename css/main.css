@@ -25,10 +25,7 @@ main {
       width: 60%; } }
   main .list-box {
     width: 40%;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
+    margin: 40px; }
     main .list-box .list-container {
       width: 100%;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -68,19 +65,19 @@ main {
           background-color: lightgrey;
           transition: 0.3s; }
       main .list-box .list-container #finishedtask li {
-        display: flex;
-        justify-content: space-between; }
+        width: 90%; }
       main .list-box .list-container #finishedtask .close-button {
         cursor: pointer;
         text-align: center;
         width: 10%;
-        left: 100%; }
+        background-color: #ecb2b23b; }
         main .list-box .list-container #finishedtask .close-button:hover {
           background-color: lightgray; }
       main .list-box .list-container ul {
         width: 80%;
         padding: 0; }
         main .list-box .list-container ul li {
+          margin: 1px;
           cursor: pointer;
           list-style: none;
           font-size: 1.1rem;
@@ -93,8 +90,10 @@ main {
             main .list-box .list-container ul li:nth-child(odd):hover {
               background-color: #c7c9c975; }
 
-.delete-help {
-  display: none; }
+.li-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
 
 header {
   display: flex;

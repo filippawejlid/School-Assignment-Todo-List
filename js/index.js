@@ -64,9 +64,16 @@ function createHTML(){
   document.getElementById("finishedtask").innerHTML= null;
   for (let i = 0; i < finishedTasks.length; i++) {
 
+    let liContainer = document.createElement("div")
+    liContainer.classList.add("li-container")
+    document.getElementById("finishedtask").appendChild(liContainer); 
+
+
     let finishedLi = document.createElement("li");
     finishedLi.id = "finished-item" +i;
-    document.getElementById("finishedtask").appendChild(finishedLi); 
+    // document.getElementById("finishedtask").appendChild(finishedLi);
+    liContainer.appendChild(finishedLi)
+ 
     finishedLi.addEventListener("click", ()=> {bringBackTask(i)})
     finishedLi.innerHTML = finishedTasks[i];
 
@@ -75,7 +82,7 @@ function createHTML(){
     span.classList.add("close-button");
     span.addEventListener("click", ()=> {deleteTask(i)})
 
-    finishedLi.appendChild(span)
+    liContainer.appendChild(span)
   }
 
 
@@ -98,6 +105,7 @@ function deleteTask(itemToDelete){
   console.log("list-item" + itemToDelete);
 
   createHTML();
+
 }
 
 function sortList() {
@@ -105,5 +113,5 @@ function sortList() {
   taskList.sort();
   console.log(taskList);
   
-
+  
 }
