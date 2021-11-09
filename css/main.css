@@ -73,7 +73,8 @@ main {
       main .list-box .list-container #finishedtask .close-button {
         cursor: pointer;
         text-align: center;
-        width: 10%; }
+        width: 10%;
+        left: 100%; }
         main .list-box .list-container #finishedtask .close-button:hover {
           background-color: lightgray; }
       main .list-box .list-container ul {
@@ -84,10 +85,6 @@ main {
           list-style: none;
           font-size: 1.1rem;
           word-wrap: break-word; }
-          main .list-box .list-container ul li:checked {
-            background: #888;
-            color: #fff;
-            text-decoration: line-through; }
           main .list-box .list-container ul li:hover {
             background-color: #c7c9c975;
             transition: 0.3s; }
@@ -95,6 +92,9 @@ main {
             background-color: rgba(211, 211, 211, 0.219); }
             main .list-box .list-container ul li:nth-child(odd):hover {
               background-color: #c7c9c975; }
+
+.delete-help {
+  display: none; }
 
 header {
   display: flex;
