@@ -44,29 +44,23 @@ main {
           padding: 10px;
           text-transform: capitalize;
         }
-        button {
-          width: 50px;
-          cursor: pointer;
-          border: white 1px solid;
-          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-            rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-            rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      .buttons {
+        width: 50px;
+        cursor: pointer;
+        border: white 1px solid;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-          &:hover {
-            background-color: lightgrey;
-            transition: 0.3s;
-          }
+        &:hover {
+          background-color: lightgrey;
+          transition: 0.3s;
         }
       }
       #sort-button {
-        border-radius: 1px;
-        padding: 2px;
-        display: flex;
-        align-items: center;
-        font-size: 0.8rem;
-        margin-bottom: 10px;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px;
+        width: 60px;
+        margin-bottom: 5px;
       }
 
       #finishedtask {
