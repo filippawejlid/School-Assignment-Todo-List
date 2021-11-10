@@ -42,6 +42,7 @@ main {
           border-radius: 0;
           width: 60%;
           padding: 10px;
+          text-transform: capitalize;
         }
         button {
           width: 50px;
@@ -58,31 +59,34 @@ main {
         }
       }
       #sort-button {
+        border-radius: 1px;
+        padding: 2px;
+        display: flex;
+        align-items: center;
+        font-size: 0.8rem;
         margin-bottom: 10px;
-        cursor: pointer;
-        border: white 1px solid;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
-        &:hover {
-          background-color: lightgrey;
-          transition: 0.3s;
-        }
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px;
       }
 
       #finishedtask {
-        li {
-          width: 90%;
-        }
-        .close-button {
-          cursor: pointer;
-          text-align: center;
-          width: 10%;
-          background-color: #ecb2b23b;
+        .li-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
 
-          &:hover {
-            background-color: lightgray;
+          li {
+            width: 90%;
+          }
+          .close-button {
+            cursor: pointer;
+            text-align: center;
+            width: 10%;
+            background-color: #ecb2b23b;
+
+            &:hover {
+              background-color: rgba(107, 52, 52, 0.233);
+            }
           }
         }
       }
@@ -95,9 +99,10 @@ main {
           list-style: none;
           font-size: 1.1rem;
           word-wrap: break-word;
+          text-transform: capitalize;
 
           &:hover {
-            background-color: #c7c9c975;
+            background-color: lightgray;
             transition: 0.3s;
           }
           &:nth-child(odd) {
@@ -110,9 +115,4 @@ main {
       }
     }
   }
-}
-.li-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
