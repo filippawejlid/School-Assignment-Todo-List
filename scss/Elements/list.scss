@@ -28,6 +28,7 @@ main {
       h2 {
         text-align: center;
       }
+
       .input-box {
         position: relative;
         width: 100%;
@@ -83,6 +84,7 @@ main {
           transition: 0.3s;
         }
       }
+
       .secondary-buttons {
         background-color: rgba(182, 230, 241, 0.342);
         width: 80px;
@@ -102,6 +104,7 @@ main {
           li {
             width: 90%;
           }
+
           .close-button {
             cursor: pointer;
             text-align: center;
