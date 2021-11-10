@@ -45,45 +45,7 @@ main {
           text-transform: capitalize;
         }
       }
-      .buttons {
-        width: 50px;
-        cursor: pointer;
-        border: white 1px solid;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-        &:hover {
-          background-color: lightgrey;
-          transition: 0.3s;
-        }
-      }
-      #sort-button {
-        width: 60px;
-        margin-bottom: 5px;
-      }
-
-      #finishedtask {
-        .li-container {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-
-          li {
-            width: 90%;
-          }
-          .close-button {
-            cursor: pointer;
-            text-align: center;
-            width: 10%;
-            background-color: #ecb2b23b;
-
-            &:hover {
-              background-color: rgba(107, 52, 52, 0.233);
-            }
-          }
-        }
-      }
       ul {
         width: 80%;
         padding: 0;
@@ -103,6 +65,51 @@ main {
             background-color: rgba(211, 211, 211, 0.219);
             &:hover {
               background-color: #c7c9c975;
+            }
+          }
+        }
+      }
+
+      .buttons {
+        width: 50px;
+        cursor: pointer;
+        border: white 1px solid;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+        &:hover {
+          background-color: lightgrey;
+          transition: 0.3s;
+        }
+      }
+      .secondary-buttons {
+        background-color: rgba(182, 230, 241, 0.342);
+        width: 80px;
+        margin-bottom: 5px;
+
+        &:hover {
+          background-color: rgba(95, 158, 160, 0.24);
+        }
+      }
+
+      #finishedtask {
+        .li-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          li {
+            width: 90%;
+          }
+          .close-button {
+            cursor: pointer;
+            text-align: center;
+            width: 10%;
+            background-color: #ecb2b23b;
+
+            &:hover {
+              background-color: rgba(107, 52, 52, 0.233);
             }
           }
         }

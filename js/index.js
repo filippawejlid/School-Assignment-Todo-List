@@ -4,6 +4,8 @@ window.onload = function() {
     document.getElementById("buttonInput").addEventListener('click', addTask)
     document.getElementById("inputValue").addEventListener('click', clearInput)
     document.getElementById("sort-button").addEventListener('click', sortList)
+    document.getElementById("clear-all").addEventListener('click', clearAll)
+    
 }
 
 
@@ -135,4 +137,13 @@ function sortList() {
       switching = true;
     }
   }
+}
+
+function clearAll() {
+
+  finishedTasks = [];
+  taskList = [];
+
+  createHTML();
+
 }
