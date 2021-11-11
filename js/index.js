@@ -3,8 +3,10 @@ window.onload = function() {
     date();
     document.getElementById("buttonInput").addEventListener('click', addTask)
     document.getElementById("inputValue").addEventListener('click', clearInput)
-    document.getElementById("sort-button").addEventListener('click', sortList)
+    // document.getElementById("sort-button").addEventListener('click', sortList)
     document.getElementById("clear-all").addEventListener('click', clearAll)
+    document.getElementById("sort-button").addEventListener('click', listSort)
+
     
 }
 
@@ -133,6 +135,29 @@ function sortList() {
       switching = true;
     }
   }
+}
+
+function listSort() {
+  let li, x, y;
+
+  ul = document.getElementById("list-ul");
+
+  li = ul.getElementsByTagName("LI");
+
+  let sorting = taskList.sort(function(a,b){
+    x = a.toLowerCase();
+    y = b.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+
+    return 0;
+
+  });
+
+
+
+  console.log(sorting);
+
 }
 
 function clearAll() {
