@@ -60,12 +60,14 @@ main {
         width: 80%;
         padding: 0; }
         main .list-box .list-container ul li {
-          margin: 1px;
+          margin-top: 1px;
           cursor: pointer;
           list-style: none;
           font-size: 1.1rem;
           word-wrap: break-word;
-          text-transform: capitalize; }
+          text-transform: capitalize;
+          padding-bottom: 10px;
+          padding-top: 10px; }
           main .list-box .list-container ul li:hover {
             background-color: lightgray;
             transition: 0.3s; }
@@ -89,7 +91,7 @@ main {
         main .list-box .list-container .button-container .secondary-buttons {
           background-color: rgba(182, 230, 241, 0.342);
           width: 80px;
-          margin-bottom: 5px; }
+          margin-bottom: 10px; }
           main .list-box .list-container .button-container .secondary-buttons:hover {
             background-color: rgba(95, 158, 160, 0.24); }
       main .list-box .list-container #finishedtask .li-container {
@@ -105,7 +107,9 @@ main {
           cursor: pointer;
           text-align: center;
           width: 20%;
-          background-color: #ecb2b23b; }
+          background-color: #ecb2b23b;
+          padding-bottom: 10px;
+          padding-top: 10px; }
           @media (min-width: 520px) {
             main .list-box .list-container #finishedtask .li-container .close-button {
               width: 10%; } }

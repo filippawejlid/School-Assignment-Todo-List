@@ -61,12 +61,13 @@ main {
         width: 80%;
         padding: 0;
         li {
-          margin: 1px;
+          margin-top: 1px;
           cursor: pointer;
           list-style: none;
           font-size: 1.1rem;
           word-wrap: break-word;
           text-transform: capitalize;
+          @include nicePadding;
 
           &:hover {
             background-color: lightgray;
@@ -104,7 +105,7 @@ main {
         .secondary-buttons {
           background-color: rgba(182, 230, 241, 0.342);
           width: 80px;
-          margin-bottom: 5px;
+          margin-bottom: 10px;
 
           &:hover {
             background-color: rgba(95, 158, 160, 0.24);
@@ -131,6 +132,7 @@ main {
             text-align: center;
             width: 20%;
             background-color: #ecb2b23b;
+            @include nicePadding;
 
             @include bigPhone {
               width: 10%;
