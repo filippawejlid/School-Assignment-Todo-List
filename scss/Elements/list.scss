@@ -1,24 +1,31 @@
 main {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 
   @include tablets {
-    width: 80%;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 90%;
   }
+
   @include desktop {
     width: 60%;
   }
 
   .list-box {
-    width: 40%;
+    width: 70%;
     margin-top: 40px;
+    margin-bottom: 40px;
+
+    @include tablets {
+      width: 45%;
+    }
 
     .list-container {
       width: 100%;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
       border-radius: 5px;
       background-color: white;
       display: flex;
@@ -33,17 +40,9 @@ main {
         position: relative;
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-
-        @include bigPhone {
-          flex-direction: row;
-        }
-
-        p {
-          margin: 0;
-        }
 
         input {
           margin: 0;
@@ -51,7 +50,7 @@ main {
           box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
             rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
             rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-          border-radius: 0;
+
           width: 60%;
           padding: 10px;
           text-transform: capitalize;
@@ -83,16 +82,12 @@ main {
       }
 
       .buttons {
-        width: 60%;
+        width: 50px;
         cursor: pointer;
         border: white 1px solid;
-
-        @include bigPhone {
-          width: 50px;
-          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-            rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-            rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        }
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
         &:hover {
           background-color: lightgrey;
@@ -103,13 +98,9 @@ main {
       .button-container {
         width: 100%;
         display: flex;
-        flex-direction: column;
         align-items: center;
+        justify-content: space-evenly;
 
-        @include bigPhone {
-          flex-direction: row;
-          justify-content: space-evenly;
-        }
         .secondary-buttons {
           background-color: rgba(182, 230, 241, 0.342);
           width: 80px;
