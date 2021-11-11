@@ -3,7 +3,6 @@ window.onload = function() {
     date();
     document.getElementById("buttonInput").addEventListener('click', addTask)
     document.getElementById("inputValue").addEventListener('click', clearInput)
-    // document.getElementById("sort-button").addEventListener('click', sortList)
     document.getElementById("clear-all").addEventListener('click', clearAll)
     document.getElementById("sort-button").addEventListener('click', listSort)
 
@@ -111,31 +110,6 @@ function deleteTask(itemToDelete){
 
 }
 
-function sortList() {
-  let ul, i, switching, li, shouldSwitch;
-  ul = document.getElementById("list-ul");
-  switching = true;
-
-  while (switching) {
-    switching = false;
-    li = ul.getElementsByTagName("LI");
-
-    for (i = 0; i < (li.length - 1); i++) {
-      shouldSwitch = false;
-
-      if (li[i].innerHTML.toLowerCase() > li[i + 1].innerHTML.toLowerCase()) {
-
-        shouldSwitch = true;
-        break;
-      }
-    }
-    if (shouldSwitch) {
-
-      li[i].parentNode.insertBefore(li[i + 1], li[i]);
-      switching = true;
-    }
-  }
-}
 
 function listSort() {
   let li, x, y;
@@ -154,10 +128,11 @@ function listSort() {
 
   });
 
-
-
-  console.log(sorting);
-
+  for (let i = 0; i < sorting.length; i++) {
+    
+    document.getElementById("list-item" + [i]).innerHTML = sorting[i];
+    
+  }
 }
 
 function clearAll() {
