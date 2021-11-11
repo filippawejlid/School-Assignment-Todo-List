@@ -112,7 +112,7 @@ function deleteTask(itemToDelete){
 
 
 function listSort() {
-  let li, x, y;
+  let x, y;
 
   ul = document.getElementById("list-ul");
 
