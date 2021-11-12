@@ -10,8 +10,8 @@ gulp.task('sass', function(){
 gulp.task("watch-scss", function () {
     gulp.watch("scss/**/*.scss", gulp.series("sass"));
 });
-    
-gulp.task("default", gulp.series("sass", "watch-scss"), function () {});
+
+
 
 gulp.task('minify', function(){
     return gulp.src('css/*.css')
@@ -19,10 +19,11 @@ gulp.task('minify', function(){
         .pipe(gulp.dest('css'))
 });
 
-gulp.task("default", gulp.series("minify"), function () {});
+gulp.task("default", gulp.series("sass", "minify",  "watch-scss"), function () {});
 
-gulp.task('watch', function(){
-    gulp.watch('scss/*.scss', ['sass']);
-    gulp.watch('scss/Elements/*.scss', ['sass']);
-    gulp.watch('css/*.css', ['minify']);
-});
+
+// gulp.task('watch', function(){
+//     gulp.watch('scss/*.scss', ['sass']);
+//     gulp.watch('scss/Elements/*.scss', ['sass']);
+//     gulp.watch('css/*.css', ['minify']);
+// });
