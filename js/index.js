@@ -10,6 +10,13 @@ window.onload = function() {
 }
 
 
+class Todo {
+
+  constructor(todo) {
+    this.item = todo;
+  }
+}
+
 function date() {
 let n =  new Date();
 let year = n.getFullYear();
@@ -26,11 +33,14 @@ let taskList = [];
 function addTask(){
 
     let newTask = document.getElementById("inputValue").value.trim();
+    let newTodo = new Todo(newTask);
+
+
 
     if (newTask === '') {
       alert("Du måste skriva något!");
     } else {
-      taskList.push(newTask);
+      taskList.push(newTodo);
 
       createHTML();
       
@@ -44,6 +54,7 @@ function moveTask (clickedItem) {
   let removedItems = taskList.splice(clickedItem, 1);  
 
   finishedTasks.push(removedItems[0]);
+  console.log(finishedTasks);
 
   createHTML();
 
@@ -60,7 +71,7 @@ function createHTML(){
     document.getElementById("list-ul").appendChild(li);  
     li.addEventListener("click", ()=> {moveTask(i)})
         
-    li.innerHTML = taskList[i];
+    li.innerHTML = taskList[i].item;
 
   }
         
@@ -79,7 +90,7 @@ function createHTML(){
     liContainer.appendChild(finishedLi)
  
     finishedLi.addEventListener("click", ()=> {bringBackTask(i)})
-    finishedLi.innerHTML = finishedTasks[i];
+    finishedLi.innerHTML = finishedTasks[i].item;
 
     let span = document.createElement("span");
     span.innerHTML = "X";
@@ -93,13 +104,16 @@ function createHTML(){
 }
 
 function bringBackTask(bringBackItem) {
-
+  
+  
   let bringBackList = finishedTasks.splice(bringBackItem, 1);  
-
+  
   taskList.push(bringBackList[0])
-
+  
   createHTML();
-
+  
+  console.log(bringBackList);
+  console.log(taskList);
 }
 
 function deleteTask(itemToDelete){
@@ -114,13 +128,9 @@ function deleteTask(itemToDelete){
 function listSort() {
   let x, y;
 
-  ul = document.getElementById("list-ul");
-
-  li = ul.getElementsByTagName("LI");
-
   let sorting = taskList.sort(function(a,b){
-    x = a.toLowerCase();
-    y = b.toLowerCase();
+    x = a.item.toLowerCase();
+    y = b.item.toLowerCase();
     if (x < y) {return -1;}
     if (x > y) {return 1;}
 
@@ -130,7 +140,7 @@ function listSort() {
 
   for (let i = 0; i < sorting.length; i++) {
     
-    document.getElementById("list-item" + [i]).innerHTML = sorting[i];
+    document.getElementById("list-item" + [i]).innerHTML = sorting[i].item;
     
   }
 }
